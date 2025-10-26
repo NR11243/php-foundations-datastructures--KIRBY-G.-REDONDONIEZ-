@@ -185,7 +185,7 @@ function display_books($id, $title, $list) {
 
   .book-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
+    box-shadow: 0 8px 22px rgba(253, 252, 252, 0.6);
   }
 
   .book-card:hover::before {
