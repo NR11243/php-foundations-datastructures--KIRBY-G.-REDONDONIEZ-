@@ -1,5 +1,5 @@
 {
-  "best_10_fantasy_books": [
+  "fantasy_books": [
     {
       "category": "fantasy",
       "title": "The Lord of the Rings",
@@ -42,7 +42,7 @@
     },
     {
       "category": "fantasy",
-      "title": "The Eye of the World (The Wheel of Time, #1)",
+      "title": "The Eye of the World ",
       "author": "Robert Jordan",
       "language": "English",
       "imageLink": "world.jpg",
@@ -163,7 +163,7 @@
       "year": 1999
     }
   ],
-  "best_10_comics": [
+  "comics": [
     {
       "category": "comic",
       "title": "Watchmen",
@@ -324,7 +324,7 @@
     },
     {
       "category": "romance",
-      "title": "The Duke and I (Bridgerton, #1)",
+      "title": "The Duke and I ",
       "author": "Julia Quinn",
       "language": "English",
       "imageLink": "duke.jpg",
@@ -332,7 +332,7 @@
     },
     {
       "category": "romance",
-      "title": "A Court of Mist and Fury (ACOTAR, #2)",
+      "title": "A Court of Mist and Fury ",
       "author": "Sarah J. Maas",
       "language": "English",
       "imageLink": "mist.webp",
