@@ -11,11 +11,10 @@ if (!$booksData) {
   die("Error: Invalid JSON format in books.json");
 }
 
-// Combine all books into one array
 $allBooks = [];
 foreach ($booksData as $category => $list) {
   if (is_array($list)) {
-    // Keep track of which category each book came from
+ 
     foreach ($list as $b) {
       $b['category'] = $category;
       $allBooks[] = $b;
@@ -26,7 +25,6 @@ foreach ($booksData as $category => $list) {
 $title = $_GET['title'] ?? '';
 $book = null;
 
-// Find the book by title
 foreach ($allBooks as $b) {
   if (isset($b['title']) && strcasecmp($b['title'], $title) === 0) {
     $book = $b;
@@ -129,7 +127,7 @@ foreach ($allBooks as $b) {
       <h1><?= htmlspecialchars($book['title']); ?></h1>
 
       <?php
-        // Smartly detect how to display creator info
+      
         $category = strtolower($book['category'] ?? '');
         $hasWriter = !empty($book['writer']);
         $hasArtist = !empty($book['artist']);
@@ -166,5 +164,3 @@ foreach ($allBooks as $b) {
 <?php endif; ?>
 </body>
 </html>
-
-
