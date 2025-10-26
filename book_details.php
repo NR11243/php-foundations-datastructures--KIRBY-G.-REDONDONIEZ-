@@ -79,7 +79,7 @@ foreach ($allBooks as $b) {
     }
 
     h1 {
-      color: #ffd84a;
+      color: #007bff;
       font-size: 40px;
       margin-bottom: 15px;
       letter-spacing: 1px;
@@ -106,7 +106,7 @@ foreach ($allBooks as $b) {
       display: inline-block;
       margin-top: 25px;
       padding: 10px 20px;
-      background: #ffd84a;
+      background: #007bff;
       color: #1e1f24;
       text-decoration: none;
       border-radius: 8px;
@@ -166,3 +166,5 @@ foreach ($allBooks as $b) {
 <?php endif; ?>
 </body>
 </html>
+
+
