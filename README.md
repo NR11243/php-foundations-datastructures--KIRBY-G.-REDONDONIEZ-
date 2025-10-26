@@ -11,12 +11,15 @@ Make sure you have PHP installed.
 Run each file from the  VS Code terminal terminal (Command Prompt,):
 
 Part I: Recursive Directory Display
+
 php recursion.php
 
 Part II: Hash Table for Book Details
+
 php hashtable.php
 
 Part III: Binary Search Tree (BST)
+
 php bst.php
 
 Example screenshots or outputs
