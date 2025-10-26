@@ -49,184 +49,225 @@ function display_books($id, $title, $list) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LitHub Library</title>
+  <title>LITHUB LIBRARY</title>
   <style>
-    body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f8fb;
-  color: #222;
-}
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('blue.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
 
-.container {
-  padding: 20px;
-}
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
 
-h1 {
-  text-align: center;
-  margin-bottom: 10px;
-}
+  .header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px 20px;
+  }
 
-.search-bar {
-  text-align: center;
-  margin: 30px 0;
-}
+  h1 {
+    margin: 0;
+    padding: 15px 40px;
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    background: linear-gradient(90deg, #001540, #002b80);
+    border: 3px solid #00bfff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.7);
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 40px #00bfff;
+    display: inline-block;
+    width: fit-content;
+  }
 
-.search-bar label {
-  font-weight: bold;
-  margin-right: 8px;
-  font-size: 16px;
-}
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+    width: 100%;
+  }
 
-.search-bar input {
-  width: 60%;
-  min-width: 27ch;
-  max-width: 500px;
-  padding: 10px 14px;
-  border-radius: 25px;
-  border: 2px solid #007bff;
-  font-size: 16px;
-  outline: none;
-  background-color: #fff;
-  color: #222;
-  transition: 0.3s;
-}
+  .search-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    max-width: 500px; 
+    width: 100%;
+  }
 
-.search-bar input:focus {
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
-}
-
-.category {
-  margin-bottom: 60px;
-  position: relative;
-}
-
-.category h2 {
-  margin: 10px 0 15px 20px;
-}
-
-.book-list {
-  display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  scroll-behavior: smooth;
-  padding: 10px 20px;
-}
-
-.book-list::-webkit-scrollbar {
-  display: none;
-}
-
-.book-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.book-card {
-  flex: 0 0 auto;
-  width: 180px;
-  height: 310px; /* consistent card height */
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  padding: 10px;
-  transition: transform 0.2s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.book-card:hover {
-  transform: scale(1.05);
-}
-
-.book-card img {
-  width: 100%;
-  height: 230px; /* fixed image height */
-  object-fit: cover; /* keeps image proportional */
-  border-radius: 10px;
-}
-
-.book-card h3 {
-  font-size: 15px;
-  font-weight: 600;
-  margin: 8px 0 0;
-  line-height: 1.3em;
-  height: 2.6em; /* fits around 2 lines */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* limits to 2 lines */
-  -webkit-box-orient: vertical;
-  white-space: normal; /* allows wrapping */
-}
-
-
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.9);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 22px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: 0.2s;
-  z-index: 5;
-}
-
-.scroll-btn:hover {
-  background-color: #007bff;
-  color: white;
-}
-
-.scroll-btn.left {
-  left: 0;
-}
-
-.scroll-btn.right {
-  right: 0;
-}
-
-@media (max-width: 700px) {
-  .scroll-btn {
-    display: none;
+  .search-bar label {
+    font-weight: bold;
+    font-size: 17px;
+    color: #fff;
   }
 
   .search-bar input {
-    width: 80%;
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 2px solid #00bfff;
+    font-size: 15px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #222;
+    transition: 0.3s;
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.4);
   }
-}
 
+  .search-bar input:focus {
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.7);
+  }
+
+  .container {
+    padding: 0 20px 40px;
+  }
+
+  .category {
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  .category h2 {
+    margin: 10px 0 15px 20px;
+    color: #fff;
+  }
+
+  .book-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding: 10px 20px;
+  }
+
+  .book-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .book-card {
+    flex: 0 0 auto;
+    width: 190px;
+    height: 330px;
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .book-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 16px;
+  }
+
+  .book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
+  }
+
+  .book-card:hover::before {
+    opacity: 1;
+  }
+
+  .book-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .book-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f3f4f6;
+    margin: 10px 8px 8px;
+    text-align: center;
+    line-height: 1.3em;
+    min-height: 2.6em;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+  }
+
+  .book-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 5;
+  }
+
+  .scroll-btn:hover {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .scroll-btn.left { left: 0; }
+  .scroll-btn.right { right: 0; }
+
+  @media (max-width: 700px) {
+    .scroll-btn { display: none; }
+    .search-bar input { width: 70%; }
+  }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>LITHUB LIBRARY</h1>
-
-  <div class="search-bar">
-    <label for="searchInput">Search</label>
-    <input
-      type="text"
-      id="searchInput"
-      name="q"
-      autocomplete="off"
-      oninput="runSearch()"
-    >
+  <div class="header-section">
+    <h1>LITHUB LIBRARY</h1>
+    <div class="search-bar">
+      <div class="search-bar-inner">
+        <label for="searchInput">Search</label>
+        <input type="text" id="searchInput" autocomplete="off" oninput="runSearch()">
+      </div>
+    </div>
   </div>
 
-  <?php
-    display_books("fantasy","Fantasy Books", $books["best_10_fantasy_books"] ?? []);
-    display_books("action", "Action Books", $books["action_books"] ?? []);
-    display_books("comics", "Comics Books", $books["best_10_comics"] ?? []);
-    display_books("romance", "Romance Books", $books["romance_books"] ?? []);
-  ?>
-</div>
+  <div class="container">
+    <?php
+      display_books("fantasy","Fantasy Books", $books["fantasy_books"] ?? []);
+      display_books("action", "Action Books", $books["action_books"] ?? []);
+      display_books("comics", "Comics Books", $books["comics"] ?? []);
+      display_books("romance", "Romance Books", $books["romance_books"] ?? []);
+    ?>
+  </div>
 
 <script>
 function phonetic(str) {
