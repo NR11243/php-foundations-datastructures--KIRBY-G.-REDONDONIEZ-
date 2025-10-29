@@ -49,7 +49,7 @@ function display_books($id, $title, $list) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LITHUB LIBRARY</title>
+  <title>Documents</title>
   <style>
   body {
     margin: 0;
@@ -328,3 +328,4 @@ function scrollRow(id, direction) {
 
 </body>
 </html>
+
